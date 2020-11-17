@@ -9,7 +9,7 @@ const puppeteer = require('puppeteer');
     const date_cnv = await page.$$eval('#player3 ul li a', url => {
         var dizhi = {};
         for (var i = 0; i < url.length; i++) {
-            dizhi[i] = url[i].href;
+            dizhi[i] = url[i].href += ',' + url[i].innerText;
         }
         return dizhi;
     });
